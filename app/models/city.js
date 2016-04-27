@@ -3,8 +3,11 @@ import Model from 'ember-data/model'
 import attr from 'ember-data/attr'
 
 export default Model.extend({
+  name: attr('string'),
   cod: attr('number'),
-  main: attr('string'),
-  description: attr('string'),
-  icon: attr('string')
+  list: attr('string'),
+
+  forecast: function () {
+  	return JSON.parse(this.get('list'))
+  }.property('list')
 })

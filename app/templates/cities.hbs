@@ -1,9 +1,9 @@
 <h1>City</h1>
-{{input type="text" name=city}} {{#link-to "city" city}} Go To Weather {{/link-to}}
-<h2>Name: {{model.city.name}}</h2>
+{{input type="text" name=city}} {{#link-to "cities" tagName="button"}} Go To Weather {{/link-to}}
+<h2>Name: {{model.name}}</h2>
 <h3>Forecast:</h3>
 {{!-- TODO: WeatherBoxComponent --}}
-{{#each model.list as |day| }}
+{{#each model.forecast as |day| }}
 	{{day.main.temp}}
 {{/each}}
 {{outlet}}
